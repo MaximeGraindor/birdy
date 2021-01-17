@@ -1,9 +1,13 @@
 import React, {useEffect, useState} from 'react'
+import {Link,useRouteMatch, Route, Switch} from 'react-router-dom'
+import UserProfile from './UserProfile'
 import Firebase from '../utils/firebase'
 
 export default function Users() {
 
     const [users, setUsers] = useState( [] )
+
+    let { path, url } = useRouteMatch();
 
     useEffect(() => {
         const db = Firebase.firestore()
@@ -21,9 +25,24 @@ export default function Users() {
             </p>
             <div>
                 {
-                    users.map(user => <p>{user.name}</p>)
+                    users.map(user =>
+                        <Link to={`${url}/${user.name}`}>
+                            {
+                                user.name
+                            }
+                        </Link>)
                 }
             </div>
+
+            <Switch>
+                <Route exact path={path}>
+                    <h3>Please select a topic.</h3>
+                </Route>
+                <Route path={`${path}/:user`}>
+                    <UserProfile />
+                </Route>
+            </Switch>
+
         </div>
     )
 }
