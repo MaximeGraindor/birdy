@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import {Link,useRouteMatch, Route, Switch} from 'react-router-dom'
 
 import Firebase from '../utils/firebase'
 
@@ -6,21 +7,15 @@ export default function Encyclopedia() {
 
     const [encyclopedie, setEncyclopedie] = useState([])
 
-    useEffect(() =>{
+    let { path, url } = useRouteMatch();
 
+    useEffect(() => {
         const db = Firebase.firestore()
-
-        const tempData = []
-
-        db.collection('encyclopedie')
-        .get()
-        .then(snapshot =>{
-            snapshot.docs.forEach(doc =>{
-                setEncyclopedie(encyclopedie.push(doc.data()))
+        db.collection('encyclopedie').get()
+            .then(querySnapshot => {
+                const data = querySnapshot.docs.map(doc => doc.data())
+                setEncyclopedie(data);
             })
-        })
-        console.log(encyclopedie)
-
     }, [])
 
     return (
@@ -30,6 +25,7 @@ export default function Encyclopedia() {
             </p>
 
             <div>
+                {encyclopedie.map(bird => <p>{bird.name}</p>)}
             </div>
         </div>
     )
