@@ -1,11 +1,29 @@
 import React, {setState} from 'react'
 import {Link} from 'react-router-dom'
+import Firebase from '../utils/firebase'
 
 export default function AddBird() {
 
+    const db = Firebase.firestore()
+
     const handleSubmit = (e) => {
+
+        db.collection("capture_list").add({
+            latin_name: e.target.elements.latinName.value,
+            wing_length: e.target.elements.wingLength.value,
+            weight: e.target.elements.weight.value,
+            adiposity: e.target.elements.adiposity.value,
+            sex: e.target.elements.sex.value,
+            age: e.target.elements.age.value,
+            how_captured: e.target.elements.howCaptured.value,
+            when_captured: e.target.elements.whenCaptured.value,
+            where_captured: e.target.elements.whereCaptured.value,
+            where_captured: e.target.elements.whereCaptured.value,
+            ring_number: e.target.elements.ringNumber.value,
+            takeover: e.target.elements.latinName.value,
+
+        })
         
-        console.log(e.target.elements);
     }
 
     return (
