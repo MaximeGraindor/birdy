@@ -35,9 +35,6 @@ export default function Users() {
             </div>
 
             <Switch>
-                <Route exact path={path}>
-                    <h3>Please select a topic.</h3>
-                </Route>
                 <Route path={`${path}/:user`}>
                     <UserProfile />
                 </Route>

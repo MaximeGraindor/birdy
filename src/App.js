@@ -8,6 +8,7 @@ import CaptureList from './components/CaptureList'
 import BandingSite from './components/BandingSite'
 import Encyclopedia from './components/Encyclopedia'
 import Users from './components/Users'
+import AddBird from './components/AddBird'
 
 import {AuthContext} from './utils/AuthContext'
 
@@ -53,6 +54,10 @@ function App() {
 					</Route>
 					<Route path="/users" >
 						<Users />
+					</Route>
+
+					<Route path="/ajouter-oiseau" >
+						<AddBird />
 					</Route>
 				</Switch>
 
