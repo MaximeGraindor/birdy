@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {Link,useRouteMatch, Route, Switch} from 'react-router-dom'
-import UserProfile from './UserProfile'
+import UserProfile from './UserProfil'
 import Firebase from '../utils/firebase'
 
 export default function Users() {
