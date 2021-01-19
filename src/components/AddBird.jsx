@@ -31,7 +31,7 @@ export default function AddBird() {
 
             <Link to={'/home'}>Revenir a l'accueil</Link>
 
-            <form action="" className="addBird" onSubmit={handleSubmit}>
+            <form action="#" className="addBird" onSubmit={handleSubmit}>
                 <div className="addBird-latinName">
                     <label htmlFor="latinName">Nom latin</label>
                     <input type="text" name="latinName" id="latinName"/>

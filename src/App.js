@@ -19,6 +19,7 @@ function App() {
 
 	return (
 		<div className="App">
+
 			<BrowserRouter>
 				{currentUser ? <Redirect to="/home" /> : <Redirect to="/login" />}
 				

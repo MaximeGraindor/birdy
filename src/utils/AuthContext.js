@@ -5,7 +5,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = (props) => {
     
-    const [currentUser, setCurrentUser] = useState()
+    const [currentUser, setCurrentUser] = useState([])
 
     useEffect(() => {
 
