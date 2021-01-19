@@ -13,10 +13,6 @@ export default function Home() {
                 Home
             </p>
 
-            {
-				console.log(currentUser)
-			}
-
             <button onClick={() => Firebase.auth().signOut()}> 
                 Sign Out
             </button>
