@@ -62,11 +62,11 @@ function App() {
 
 				{
 					currentUser ?
-					<div>
-						<Link to="/capturelist">Liste de capture</Link>
-						<Link to="/bandingsite">Site de baguage</Link>
-						<Link to="/encyclopedia">Encyclopédie</Link>
-						<Link to="/users">Utilisateurs</Link>
+					<div className="mainMenu">
+						<Link to="/capturelist" className="mainMenu-captureList"><span>Liste de capture</span></Link>
+						<Link to="/bandingsite" className="mainMenu-bandingSite"><span>Site de baguage</span></Link>
+						<Link to="/encyclopedia" className="mainMenu-encyclopedia"><span>Encyclopédie</span></Link>
+						<Link to="/users" className="mainMenu-users"><span>Utilisateurs</span></Link>
 					</div>
 					:
 					''

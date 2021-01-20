@@ -30,7 +30,7 @@ export default function SignUpForm() {
             </div>
             <form action="#" onSubmit={authRegister} className="signUpForm-form">
                 <div>
-                    <label htmlFor="email">email</label>
+                    <label htmlFor="email">Email</label>
                     <input type="email" name="email" id="email" onChange={e => setEmail(e.target.value)}/>
                 </div>
                 <div>

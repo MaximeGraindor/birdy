@@ -1,7 +1,8 @@
 import React, {setState, useContext} from 'react'
 import {Link} from 'react-router-dom'
 import Firebase from '../utils/firebase'
-import {AuthContext} from '../utils/AuthContext' 
+import {AuthContext} from '../utils/AuthContext'
+import '../css/addBird.css'
 
 export default function AddBird() {
 
@@ -31,11 +32,16 @@ export default function AddBird() {
     }
 
     return (
-        <div>
+        <div className="addBird">
 
             <Link to={'/home'}>Revenir a l'accueil</Link>
+            <div className="addBird-top">
+                <h1 className="addBird-title">
+                    Ajouter un oiseau
+                </h1>
+            </div>
 
-            <form action="#" className="addBird" onSubmit={handleSubmit}>
+            <form action="#" className="addBird-form" onSubmit={handleSubmit}>
                 <div className="addBird-latinName">
                     <label htmlFor="latinName">Nom latin</label>
                     <input type="text" name="latinName" id="latinName"/>

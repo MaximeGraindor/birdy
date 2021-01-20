@@ -1,0 +1,46 @@
+.addBird{
+    flex: 0 0 92.5%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.addBird-top{
+    text-align: center;
+}
+
+.addBird-title{
+    padding: 0.8rem 0.9rem;
+    box-sizing: border-box;
+    background-color: #0A9DB4;
+    color: black; 
+    font-size: 1.5rem;
+}
+
+.addBird-form{
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+.addBird-form div{
+    display: flex;
+    flex-direction: column;
+}
+.addBird-form label{
+    margin-bottom: 0.2rem;
+}
+.addBird-form input[type="text"],
+.addBird-form input[type="date"]{
+    padding: 0.8rem 0.9rem;
+    box-sizing: border-box;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+}
+
+.addBird-form input[type="submit"]{
+    padding: 0.6rem 0.9rem;
+    margin-top: 1.3rem;
+    background-color: #0A9DB4;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

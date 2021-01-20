@@ -7,7 +7,6 @@
 #root{
     width: 375px;
     height: 812px;
-    border: 2px solid black;
     background-color: #2B2C3E;
     color: white;
     margin: 0 auto;
@@ -16,4 +15,54 @@
 
 .App{
     height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainMenu{
+    background-color: white;
+    display: flex;
+    height: 60px;
+    flex: 0 0 7%;
+    border: 1px solid black;
+}
+
+.mainMenu span{
+    visibility: hidden;
+}
+
+.mainMenu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mainMenu a:not(:last-child) {
+    border-right: 2px solid black;
+}
+
+.mainMenu-captureList{
+    background-image: url('../assets/dove.svg');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.mainMenu-bandingSite{
+    background-image: url('../assets/location.svg');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.mainMenu-encyclopedia{
+    background-image: url('../assets/encyclopedia.svg');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.mainMenu-users{
+    background-image: url('../assets/group.svg');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
