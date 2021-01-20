@@ -1,0 +1,46 @@
+.welcomeScreen{
+    background-image: url('../assets/welcomeScreen-background.jpg');
+    height:100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+.link-login, .link-signup{
+    color: white;
+    text-decoration-line: none;
+    background-color: #0A9DB4;
+    padding: 0.8rem 0.9rem;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
+
+.link-login{
+    background-color: #0A9DB4;
+}
+.link-login:hover{
+    background-color: #098092;
+}
+
+.link-signup{
+    background-color: #3C3E5A;
+}
+.link-signup:hover{
+    background-color: #313349;
+}
+
+.welcomeScreen-title{
+    text-align:center;
+    color: black;
+    margin-bottom: 50px;
+}
+
+.welcomeScreen-linkWrap{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,6 +1,8 @@
 import React, {useState, Fragment, useContext} from 'react'
+import {Link} from 'react-router-dom'
 import firebase from '../utils/firebase'
 import {AuthContext} from '../utils/AuthContext' 
+import '../css/loginForm.css'
 
 export default function LoginForm() {
 
@@ -24,24 +26,26 @@ export default function LoginForm() {
     }
 
     return (
-        <div>
-            <p>
-                Formulaire de connection
-            </p>
-            <form>
-                <p>
+        <div className="loginForm">
+            <div className="loginForm-top">
+                <h1 className="loginForm-title">
+                    Se connecter
+                </h1>
+                <Link className="loginform-link" to={'/signup'}>
+                    S'inscrire
+                </Link>
+            </div>
+            <form className="loginForm-form">
+                <div>
                     <label htmlFor="email">Email</label>
-                    <input type="mail" name="email" id="email" placeholder="maxime.graindor@hotmail.com" onChange={e => setUser(e.target.value)} />
-                </p>
-                <p>
+                    <input type="email" name="email" id="email" placeholder="maxime.graindor@hotmail.com" onChange={e => setUser(e.target.value)} />
+                </div>
+                <div>
                     <label htmlFor="password">Mot de passe</label>
                     <input type="password" name="password" id="password" onChange={e => setPassword(e.target.value)}/>
-                </p>
+                </div>
                 <input type="submit" value="Se connecter" onClick={authListener}/>
             </form>
-
-            {currentUser ? currentUser.email : <div> test </div>}
-
         </div>
     )
 }

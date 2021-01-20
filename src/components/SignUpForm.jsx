@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
+import {Link} from 'react-router-dom'
 import Firebase from '../utils/firebase'
+import '../css/signUpForm.css'
 
 export default function SignUpForm() {
 
@@ -17,8 +19,16 @@ export default function SignUpForm() {
     }
 
     return (
-        <div>
-            <form action="#" onSubmit={authRegister}>
+        <div className="signUpForm">
+            <div className="signUpForm-top">
+                <h1 className="signUpForm-title">
+                    S'inscire
+                </h1>
+                <Link className="signUpForm-link" to={'/login'}>
+                    Se connecter
+                </Link>
+            </div>
+            <form action="#" onSubmit={authRegister} className="signUpForm-form">
                 <div>
                     <label htmlFor="email">email</label>
                     <input type="email" name="email" id="email" onChange={e => setEmail(e.target.value)}/>
@@ -29,7 +39,7 @@ export default function SignUpForm() {
                 </div>
                 <div>
                     <label htmlFor="confirmedPassword">Confirmation du mot de passe</label>
-                    <input type="confirmedPassword" name="confirmedPassword" id="email" onChange={e => setConfirmedPassword(e.target.value)}/>
+                    <input type="password" name="confirmedPassword" id="email" onChange={e => setConfirmedPassword(e.target.value)}/>
                 </div>
                 <div>
                     <input type="submit" value="S'inscrire"/>

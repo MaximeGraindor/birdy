@@ -1,0 +1,56 @@
+.loginForm{
+    background-image: url('../assets/welcomeScreen-background.jpg');
+    height:100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3rem;
+    box-sizing: border-box;
+    color: black;
+}
+
+.loginForm-top{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+.loginForm-title{
+    text-align:center;
+    margin-bottom: 1.5rem;
+}
+
+.loginform-link{
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+
+.loginForm-form{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+.loginForm-form div{
+    display: flex;
+    flex-direction: column;
+}
+.loginForm-form label{
+    margin-bottom: 0.2rem;
+}
+.loginForm-form input[type="email"],
+.loginForm-form input[type="password"]{
+    padding: 0.8rem 0.9rem;
+    box-sizing: border-box;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+}
+
+.loginForm-form input[type="submit"]{
+    padding: 0.6rem 0.9rem;
+    margin-top: 1.3rem;
+    background-color: #0A9DB4;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
