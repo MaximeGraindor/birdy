@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {Link,useRouteMatch, Route, Switch} from 'react-router-dom'
+import '../css/encyclopedia.css'
 
 import Firebase from '../utils/firebase'
 
@@ -19,10 +20,13 @@ export default function Encyclopedia() {
     }, [])
 
     return (
-        <div>
-            <p>
-                ENCYCLOPEDIE
-            </p>
+        <div className="encyclopedia">
+            <div className="backHome-wrap">
+                <Link to={'/home'} className="back-to-home">Revenir a l'accueil</Link>
+            </div>
+            <h1 className="encyclopedia-title">
+                Encyclopedie
+            </h1>
 
             <div>
                 {encyclopedie.map(bird => <p>{bird.name}</p>)}

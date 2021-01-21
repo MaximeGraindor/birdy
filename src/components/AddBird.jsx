@@ -1,5 +1,5 @@
 import React, {setState, useContext} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import Firebase from '../utils/firebase'
 import {AuthContext} from '../utils/AuthContext'
 import '../css/addBird.css'
@@ -7,11 +7,11 @@ import '../css/addBird.css'
 export default function AddBird() {
 
     const [currentUser, setCurrentUser] = useContext(AuthContext)
+
     const db = Firebase.firestore()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(e.target.elements);
         db.collection("capture_list").add({
             latin_name: e.target.elements.latinName.value,
             wing_length: e.target.elements.wingLength.value,
@@ -22,11 +22,15 @@ export default function AddBird() {
             how_captured: e.target.elements.howCaptured.value,
             when_captured: e.target.elements.whenCaptured.value,
             where_captured: e.target.elements.whereCaptured.value,
-            where_captured: e.target.elements.whereCaptured.value,
             ring_number: e.target.elements.ringNumber.value,
             takeover: e.target.elements.latinName.value,
             user_id: currentUser.uid
-
+        })
+        db.collection("capture_list")
+        .where('where_captured', '==', e.target.elements.whereCaptured.value)
+        .get()
+        .then(querySnapshot => {
+            const data = querySnapshot.docs.map(doc => doc.data())
         })
         
     }
@@ -34,7 +38,9 @@ export default function AddBird() {
     return (
         <div className="addBird">
 
-            <Link to={'/home'}>Revenir a l'accueil</Link>
+            <div className="backHome-wrap">
+                <Link to={'/home'} className="back-to-home">Revenir a l'accueil</Link>
+            </div>
             <div className="addBird-top">
                 <h1 className="addBird-title">
                     Ajouter un oiseau

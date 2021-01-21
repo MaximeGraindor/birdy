@@ -20,6 +20,27 @@
     flex-direction: column;
 }
 
+.backHome-wrap{
+    padding: 1.5rem
+}
+
+.back-to-home{
+    color: white;
+    text-decoration: none;
+}
+
+.back-to-home::before{
+    content: " ";
+    display: inline-block;
+    background-image: url("../assets/arrow.svg");
+    background-size: 100%;
+    width: 20px;
+    height: 20px;
+    transform: rotate(180deg);
+    margin-right: 1rem;
+    vertical-align: bottom;
+}
+
 .mainMenu{
     background-color: white;
     display: flex;

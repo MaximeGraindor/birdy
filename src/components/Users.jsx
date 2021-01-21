@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {Link,useRouteMatch, Route, Switch} from 'react-router-dom'
 import UserProfile from './UserProfil'
 import Firebase from '../utils/firebase'
+import '../css/users.css'
 
 export default function Users() {
 
@@ -19,10 +20,13 @@ export default function Users() {
     }, [])
 
     return (
-        <div>
-            <p>
-                USERS
-            </p>
+        <div className="users">
+            <div className="backHome-wrap">
+                <Link to={'/home'} className="back-to-home">Revenir a l'accueil</Link>
+            </div>
+            <h1 className="users-title">
+                Communautée
+            </h1>
             <div>
                 {
                     users.map(user =>
