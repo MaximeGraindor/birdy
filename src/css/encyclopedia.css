@@ -1,5 +1,7 @@
 .encyclopedia{
     flex: 0 092.5%;
+    overflow: scroll;
+    overflow-x: hidden
 }
 
 .encyclopedia-title{

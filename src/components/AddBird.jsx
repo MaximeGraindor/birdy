@@ -23,7 +23,7 @@ export default function AddBird() {
             when_captured: e.target.elements.whenCaptured.value,
             where_captured: e.target.elements.whereCaptured.value,
             ring_number: e.target.elements.ringNumber.value,
-            takeover: e.target.elements.latinName.value,
+            takeover: e.target.elements.takeover.value,
             user_id: currentUser.uid
         })
         db.collection("capture_list")
@@ -70,7 +70,10 @@ export default function AddBird() {
 
                 <div className="addBird-latinName">
                     <label htmlFor="sex">Sexe</label>
-                    <input type="text" name="sex" id="sex"/>
+                    <select name="sex" id="sex">
+                        <option value="mâle">Mâle</option>
+                        <option value="femelle">Femelle</option>
+                    </select>
                 </div>
 
                 <div className="addBird-age">

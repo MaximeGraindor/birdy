@@ -29,7 +29,8 @@
     margin-bottom: 0.2rem;
 }
 .addBird-form input[type="text"],
-.addBird-form input[type="date"]{
+.addBird-form input[type="date"],
+.addBird-form select{
     padding: 0.8rem 0.9rem;
     box-sizing: border-box;
     margin-bottom: 1.2rem;

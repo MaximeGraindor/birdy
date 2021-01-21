@@ -1,5 +1,7 @@
 .users{
     flex: 0 092.5%;
+    overflow: scroll;
+    overflow-x: hidden
 }
 
 .users-title{
@@ -10,4 +12,29 @@
     font-size: 1.5rem;
     text-align: center;
     margin-bottom: 0.5rem;
+}
+
+.users-content{
+    padding: 1rem 3rem;
+}
+
+.users-content ul{
+    list-style-type: none;
+}
+
+.users-content li{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+
+.users-content ul a{
+    text-decoration: none;
+    color: white;
+    background-color: #3C3E5A;
+    padding: 0.8rem 3.9rem;
+}
+.users-content ul a:hover{
+    background-color: #54577e;
+
 }

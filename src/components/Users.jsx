@@ -27,15 +27,18 @@ export default function Users() {
             <h1 className="users-title">
                 Communautée
             </h1>
-            <div>
+            <div className="users-content">
+                <ul>
                 {
                     users.map(user =>
-                        <Link to={`${url}/${user.name}`}>
-                            {
-                                user.name
-                            }
-                        </Link>)
+                        <li>
+                            <Link to={`${url}/${user.name}`} className="users-link">
+                                {user.firstname + " " + user.name}
+                            </Link>
+                        </li>
+                        )
                 }
+                </ul>
             </div>
 
             <Switch>

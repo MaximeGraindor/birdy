@@ -20,7 +20,6 @@ export default function CaptureList() {
             const data = querySnapshot.docs.map(doc => doc.data())
             setCaptures(data);
         })
-        console.log(path, url);
     }, [])
     
     return (

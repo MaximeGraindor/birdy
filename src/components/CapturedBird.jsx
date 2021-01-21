@@ -12,23 +12,51 @@ export default function CapturedBird() {
         db.collection('capture_list').where("latin_name", "==", capturedBird).get()
             .then(querySnapshot => {
                 const data = querySnapshot.docs.map(doc => doc.data())
-                console.log(data);
                 setBirdInfos(data);
             })
     }, [])
 
     return (
-        <div>
-            <ul>
+        <div className="capturedBird">
+            <dl>
             {
                     birdInfos.map(info => 
                         <Fragment>
-                        	<li>{info.latin_name}</li>
-                        	<li>{info.age}</li>
-                        	<li>{info.sexe}</li>
+                        	<dt>Nom</dt>
+                        	<dd>{info.latin_name}&nbsp;ans</dd>
+
+                            <dt>Âge</dt>
+                        	<dd>{info.latin_name}&nbsp;ans</dd>
+
+                        	<dt>Sexe</dt>
+                        	<dd>{info.sex}</dd>
+
+                            <dt>Poids</dt>
+                        	<dd>{info.weight}</dd>
+
+                            <dt>Adiposité</dt>
+                        	<dd>{info.adiposity}</dd>
+
+                            <dt>Longueur alaire</dt>
+                        	<dd>{info.wing_length}</dd>
+
+                            <dt>Quand a-t-il été capturé</dt>
+                        	<dd>{info.when_captured}</dd>
+
+                            <dt>Où a-t-il été capturé</dt>
+                        	<dd>{info.where_captured}</dd>
+
+                            <dt>Comment a-t-il été capturé</dt>
+                        	<dd>{info.how_captured}</dd>
+
+                            <dt>Numéro de la bague</dt>
+                        	<dd>{info.ring_number}</dd>
+
+                            <dt>Reprise?</dt>
+                        	<dd>{info.takeover}</dd>
                         </Fragment>
                 )}
-            </ul>
+            </dl>
         </div>
     )
 }
