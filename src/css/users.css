@@ -23,8 +23,10 @@
 }
 
 .users-content li{
-    text-align: center;
     margin-bottom: 3rem;
+    background-color: #3C3E5A;
+    padding: 0.8rem 1.9rem;
+    box-shadow: 1px 1px 8px black;
 }
 
 
@@ -32,9 +34,12 @@
     text-decoration: none;
     color: white;
     background-color: #3C3E5A;
-    padding: 0.8rem 3.9rem;
 }
 .users-content ul a:hover{
     background-color: #54577e;
 
+}
+.users-content li div:first-child{
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }

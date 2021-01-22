@@ -12,9 +12,13 @@ export default function SignUpForm() {
     const authRegister = (e) => {
         e.preventDefault();
         Firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then((user) => {
-            console.log(user);
+        const db = Firebase.firestore()
+        db.collection('users').add({
+            firstname: e.target.elements.firstname.value,
+            name: e.target.elements.name.value,
+            email: e.target.elements.email.value
         })
+
 
     }
 
@@ -30,6 +34,14 @@ export default function SignUpForm() {
             </div>
             <form action="#" onSubmit={authRegister} className="signUpForm-form">
                 <div>
+                    <label htmlFor="firstname">Prénom</label>
+                    <input type="text" name="firstname" id="firstname" onChange={e => setEmail(e.target.value)}/>
+                </div>
+                <div>
+                    <label htmlFor="name">Nom</label>
+                    <input type="text" name="name" id="name" onChange={e => setEmail(e.target.value)}/>
+                </div>
+                <div>
                     <label htmlFor="email">Email</label>
                     <input type="email" name="email" id="email" onChange={e => setEmail(e.target.value)}/>
                 </div>
@@ -37,10 +49,7 @@ export default function SignUpForm() {
                     <label htmlFor="password">Mot de passe</label>
                     <input type="password" name="password" id="password" onChange={e => setPassword(e.target.value)}/>
                 </div>
-                <div>
-                    <label htmlFor="confirmedPassword">Confirmation du mot de passe</label>
-                    <input type="password" name="confirmedPassword" id="email" onChange={e => setConfirmedPassword(e.target.value)}/>
-                </div>
+
                 <div>
                     <input type="submit" value="S'inscrire"/>
                 </div>

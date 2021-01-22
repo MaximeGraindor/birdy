@@ -13,3 +13,30 @@
     text-align: center;
     margin-bottom: 0.5rem;
 }
+
+.encyclopedia-content{
+    padding: 1rem 3rem;
+}
+
+.encyclopedia-content ul{
+    list-style-type: none;
+}
+
+.encyclopedia-content li{
+    margin-bottom: 3rem;
+    background-color: #3C3E5A;
+    padding: 0.8rem 1.9rem;
+    box-shadow: 1px 1px 8px black;
+    text-align: center;
+}
+
+
+.encyclopedia-content ul a{
+    text-decoration: none;
+    color: white;
+    background-color: #3C3E5A;
+}
+.encyclopedia-content ul a:hover{
+    background-color: #54577e;
+
+}

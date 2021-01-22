@@ -32,9 +32,19 @@ export default function Users() {
                 {
                     users.map(user =>
                         <li>
-                            <Link to={`${url}/${user.name}`} className="users-link">
-                                {user.firstname + " " + user.name}
-                            </Link>
+                            <div>
+                                <Link to={`${url}/${user.name}`} className="users-link">
+                                    {user.firstname + " " + user.name}
+                                </Link>
+                            </div>
+                            <div>
+                                <p>
+                                    Total de captures : 0
+                                </p>
+                                <p>
+                                    Sites enregistrés : 0
+                                </p>
+                            </div>
                         </li>
                         )
                 }

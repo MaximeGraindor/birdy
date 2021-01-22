@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {Link,useRouteMatch, Route, Switch} from 'react-router-dom'
 import '../css/encyclopedia.css'
+import Bird from './Bird'
 
 import Firebase from '../utils/firebase'
 
@@ -28,9 +29,24 @@ export default function Encyclopedia() {
                 Encyclopedie
             </h1>
 
-            <div>
-                {encyclopedie.map(bird => <p>{bird.name}</p>)}
+            <div className="encyclopedia-content">
+                <ul>
+                    {
+                        encyclopedie.map(bird => 
+                                <li>
+                                    <Link to={`${url}/${bird.name}`}>{bird.name}</Link>
+                                </li>
+                            )
+                    }
+                </ul>
             </div>
+
+            <Switch>
+                <Route path={`${path}/:bird`}>
+                    <Bird />
+                </Route>
+            </Switch>
+
         </div>
     )
 }
