@@ -10,6 +10,7 @@ export default function AddBandingSite() {
 
     const [latitude, setLatitude] = useState()
     const [longitude, setLongitude] = useState()
+    
     const [currentUser, setCurrentUser] = useContext(AuthContext)
 
     useEffect(() => {
@@ -32,7 +33,7 @@ export default function AddBandingSite() {
                 latitude: e.target.elements.latitude.value,
                 longitude: e.target.elements.longitude.value 
             },
-            area: 50.50,
+            area: e.target.elements.area.value,
             user_id: currentUser.uid
         })
     }
@@ -69,6 +70,10 @@ export default function AddBandingSite() {
                     <div className="bandingSite-longitude">
                         <label htmlFor="longitude">Longitude</label>
                         <input type="text" name="longitude" id="longitude" value={longitude}/>
+                    </div>
+                    <div className="bandingSite-area">
+                        <label htmlFor="area">Superficie circulaire</label>
+                        <input type="text" name="area" id="area"/>
                     </div>
                     <div className="bandingSite-submit">
                         <input type="submit" value="Envoyer"/>
