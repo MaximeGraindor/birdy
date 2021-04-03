@@ -11,6 +11,7 @@ import Encyclopedia from './components/Encyclopedia'
 import Users from './components/Users'
 import AddBird from './components/AddBird'
 import AddBandingSite from './components/AddBandingSite'
+import Profil from './components/Profil'
 
 import '../src/css/loginForm.css'
 
@@ -61,6 +62,9 @@ function App() {
 					</Route>
 					<Route path="/ajouter-site" >
 						<AddBandingSite />
+					</Route>
+					<Route path="/profil" >
+						<Profil />
 					</Route>
 				</Switch>
 

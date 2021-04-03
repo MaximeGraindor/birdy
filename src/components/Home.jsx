@@ -17,6 +17,7 @@ export default function Home() {
             <div className="home-top">
                 <Link to={'/ajouter-oiseau'} className="home-addBird">Ajouter un oiseau</Link>
                 <Link to={'/ajouter-site'} className="home-addBird">Ajouter un site de baguage</Link>
+                <Link to={'/profil'} className="home-addBird">Mon profil</Link>
                 <button onClick={() => Firebase.auth().signOut()}> 
                     Sign Out
                 </button>
