@@ -14,7 +14,7 @@ export default function UserProfile() {
                 const data = querySnapshot.docs.map(doc => doc.data())
                 console.log(data);
                 setUserProfil(data);
-            })
+        })
     }, [])
 
     return (

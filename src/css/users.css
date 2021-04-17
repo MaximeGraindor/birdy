@@ -25,21 +25,30 @@
 .users-content li{
     margin-bottom: 3rem;
     background-color: #3C3E5A;
-    padding: 0.8rem 1.9rem;
     box-shadow: 1px 1px 8px black;
 }
 
 
-.users-content ul a{
-    text-decoration: none;
-    color: white;
-    background-color: #3C3E5A;
+.users-content ul .user-name{
+    background-color: #222831;
+    padding: 0.8rem 0.9rem;
+    display: flex;
+    align-items: center;
 }
-.users-content ul a:hover{
-    background-color: #54577e;
+.users-content ul .user-name:before{
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url('../assets/user.svg');
+    background-size: 100%;
+    margin-right: 10px;
+}
 
+
+.users-content li .user-info{
+    padding: 0.8rem 0.9rem;
 }
-.users-content li div:first-child{
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+.users-content li .user-info p{
+    margin-bottom: 0.4rem;
 }

@@ -7,6 +7,8 @@ import '../css/users.css'
 export default function Users() {
 
     const [users, setUsers] = useState( [] )
+    const [nbrCapture, setNbrCapture] = useState( [] )
+    
 
     let { path, url } = useRouteMatch();
 
@@ -19,6 +21,18 @@ export default function Users() {
             })
     }, [])
 
+    /* const totalCaptureCount = (userEmail) => {
+        const db = Firebase.firestore()
+        db.collection('capture_list').where("user_email", "==", userEmail).get()
+            .then(querySnapshot => {
+                const data = querySnapshot.docs.map(doc => doc.data())
+                console.log(data);
+                setNbrCapture(data);
+            }
+        )
+        return nbrCapture.length;
+    } */
+
     return (
         <div className="users">
             <div className="backHome-wrap">
@@ -30,16 +44,16 @@ export default function Users() {
             <div className="users-content">
                 <ul>
                 {
-                    users.map(user =>
-                        <li>
+                    users.map((user, index) =>
+                        <li key={index}>
                             <div>
-                                <Link to={`${url}/${user.name}`} className="users-link">
+                                <p className="user-name">
                                     {user.firstname + " " + user.name}
-                                </Link>
+                                </p>
                             </div>
-                            <div>
+                            <div className="user-info">
                                 <p>
-                                    Total de captures : 0
+                                    Total de captures : 0 {/* {totalCaptureCount(user.email)} */}
                                 </p>
                                 <p>
                                     Sites enregistrés : 0
@@ -50,13 +64,6 @@ export default function Users() {
                 }
                 </ul>
             </div>
-
-            <Switch>
-                <Route path={`${path}/:user`}>
-                    <UserProfile />
-                </Route>
-            </Switch>
-
         </div>
     )
 }

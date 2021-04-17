@@ -1,0 +1,65 @@
+.bird{
+    flex: 0 092.5%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.bird-content-header{
+    padding: 1rem 2rem;
+}
+.bird-content-header p{
+    text-align: center;
+    margin-top: 0.8rem ;
+}
+
+.bird-content-header .bird-img{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.bird-content-carats{
+    padding: 1rem 2rem;
+}
+
+.bird-content-carats div{
+    display: flex;
+    border: 1px solid black;
+    font-size: 0.8rem;
+}
+
+.bird-content-carats dt{
+    border-right: 1px solid black;
+}
+
+.bird-content-carats dt, .bird-content-carats dd{
+    background-color: #222831;
+    padding: 0.8rem;
+    flex: 1;
+}
+
+
+.bird-content-bigCarats{
+    padding: 1rem 2rem;
+}
+
+.bird-content-bigCarats dt{
+    background-color: #3b3d55;
+    padding: 0.8rem 0.9rem;
+    font-weight: bold;
+}
+.bird-content-bigCarats dd{
+    background-color: #222831;;
+    padding: 0.8rem 0.9rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+
+}
+
+.bird-distribution{
+    width: 100%;
+}
+
+.bird-singing{
+    margin-top: 1rem;
+}

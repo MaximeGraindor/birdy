@@ -17,7 +17,6 @@ export default function BandingSite() {
         .then(querySnapshot => {
             const data = querySnapshot.docs.map(doc => doc.data())
             setBandingSite(data);
-            console.log(data);
         })
     }, [])
 
@@ -42,13 +41,13 @@ export default function BandingSite() {
                                 </div>
                                 <div className="site-bot">
                                     <p>
-                                        latitude : {site.position.latitude}
+                                        Latitude : {site.position.latitude}
                                     </p>
                                     <p>
                                         Longitude : {site.position.longitude}
                                     </p>
                                     <p>
-                                        area : {site.area}
+                                        Superficie : {site.area}
                                     </p>
                                 </div>
                             </li>

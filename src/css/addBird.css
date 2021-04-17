@@ -24,6 +24,7 @@
 .addBird-form div{
     display: flex;
     flex-direction: column;
+    margin-bottom: 1.2rem;
 }
 .addBird-form label{
     margin-bottom: 0.2rem;
@@ -33,7 +34,6 @@
 .addBird-form select{
     padding: 0.8rem 0.9rem;
     box-sizing: border-box;
-    margin-bottom: 1.2rem;
     font-size: 0.9rem;
 }
 
@@ -44,4 +44,66 @@
     color: white;
     border: none;
     cursor: pointer;
+}
+
+.user-content{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.user-update h2{
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.user-update form {
+    text-align: center;
+}
+
+label{
+    margin-right: 10px;
+}
+
+input{
+    padding: 0.5rem 0.6rem;
+}
+
+.userUpdate-name{
+    margin-bottom: 0.8rem;
+}
+
+.userUpdate-submit{
+    margin-top: 1rem;
+}
+
+.addBird-error{
+    margin-top: 0.3rem;
+    color: rgb(255, 0, 0);
+}
+.addBird-error:before{
+    content: "";
+    background-image: url('../assets/error.svg');
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: bottom;
+    margin-right: 5px;
+}
+
+.addbird-takeover-wrap{
+    display: flex;
+    flex-direction: row !important;
+    gap: rem;
+}
+
+.addBird-takeover .addbird-takeover-wrap div{
+    display: flex;
+    flex-direction: row;
+}
+.addBird-takeover p{
+    margin-bottom: 0.8rem;
+}
+.addBird-takeover div input{
+   margin-top: 5px;
 }

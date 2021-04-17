@@ -1,5 +1,5 @@
 import React,{useEffect, useState, useContext} from 'react'
-import {Link, useLocation, useRouteMatch, Switch, Route} from 'react-router-dom'
+import {BrowserRouter, Link, useLocation, useRouteMatch, Switch, Route} from 'react-router-dom'
 import Firebase from '../utils/firebase'
 import {AuthContext} from '../utils/AuthContext'
 import CapturedBird from './CapturedBird'
@@ -36,23 +36,22 @@ export default function CaptureList() {
             <div className="captureList-content">
                 <ul>
                     {
-                        captures.map(capture => 
-                                <li>
-                                    <Link to={`${path}/${capture.latin_name}`}>
+                        captures.map((capture, index) => 
+                                <li key={index}>
+                                    <Link to={`${path}/${capture.slug}`}>
                                         {capture.latin_name}
                                     </Link>
+                                    <p>Capturé le : {capture.when_captured}</p>
                                 </li>
                         )
                     }
                 </ul>
             </div>
-
-            <Switch>
-                <Route path={`${path}/:capturedBird`}>
-                    <CapturedBird />
-                </Route>
-            </Switch>
-
+                <Switch>
+                    <Route path={`${path}/:capturedBird`}>
+                        <CapturedBird />
+                    </Route>
+                </Switch>
         </div>
     )
 }

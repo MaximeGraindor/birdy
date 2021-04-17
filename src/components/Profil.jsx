@@ -22,12 +22,13 @@ export default function Profil() {
     const handleSubmit = (e) => {
         e.preventDefault()
         const db = Firebase.firestore()
-        db.collection('users').where("email", "==", currentUser.email).get().then(querySnapshot => {
-            querySnapshot.forEach(doc =>  
-                doc.update({
-                    "firstname" : "test",
-                    "name" : "helloworld"
-            }))
+        db.collection('users').where("email", "==", currentUser.email).get().then(function(querySnapshot){
+            querySnapshot.forEach(function(document){
+                document.ref.update({
+                    "firstname" : e.target.elements.firstname.value,
+                    "name" : e.target.elements.name.value
+                })
+            });
         })
     }
 

@@ -6,8 +6,11 @@ import Home from './components/Home'
 import LoginForm from './components/LoginForm'
 import SignUpForm from './components/SignUpForm'
 import CaptureList from './components/CaptureList'
+import CapturedBird from './components/CapturedBird'
+import EditBird from './components/EditBird'
 import BandingSite from './components/BandingSite'
 import Encyclopedia from './components/Encyclopedia'
+import Bird from './components/Bird'
 import Users from './components/Users'
 import AddBird from './components/AddBird'
 import AddBandingSite from './components/AddBandingSite'
@@ -44,19 +47,32 @@ function App() {
 						<SignUpForm />
 					</Route>
 
-					<Route path="/capturelist" >
+
+					<Route exact={true} path="/capturelist" >
 						<CaptureList />
+					</Route>
+					<Route path={`/capturelist/:capturedBird`}>
+                        <CapturedBird />
+                    </Route>
+					<Route path={`/edit/:bird`}>
+                        <EditBird />
+                    </Route>
+
+
+					<Route exact={true} path="/encyclopedia" >
+						<Encyclopedia />
+					</Route>
+					<Route path={`/encyclopedia/:bird`}>
+						<Bird />
+					</Route>
+
+
+					<Route path="/users" >
+						<Users />
 					</Route>
 					<Route path="/bandingsite" >
 						<BandingSite />
 					</Route>
-					<Route path="/encyclopedia" >
-						<Encyclopedia />
-					</Route>
-					<Route path="/users" >
-						<Users />
-					</Route>
-
 					<Route path="/ajouter-oiseau" >
 						<AddBird />
 					</Route>

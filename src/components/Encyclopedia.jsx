@@ -30,15 +30,16 @@ export default function Encyclopedia() {
             </h1>
 
             <div className="encyclopedia-content">
-                <ul>
-                    {
-                        encyclopedie.map(bird => 
-                                <li>
-                                    <Link to={`${url}/${bird.name}`}>{bird.name}</Link>
-                                </li>
-                            )
-                    }
-                </ul>
+                {
+                    encyclopedie.map((bird, index) => 
+                            <div key={index} className="encyclopedia-item">
+                                <Link to={`${url}/${bird.slug}`} className="encyclopedia-item-link">
+                                    <img src={`/img/bird/${bird.bird_img}`} alt="" className="encyclopedia-item-img"/>
+                                    <span className="encyclopedia-item-name">{bird.common_name}</span>
+                                </Link>
+                            </div>
+                        )
+                }
             </div>
 
             <Switch>
