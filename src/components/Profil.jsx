@@ -2,7 +2,7 @@ import React, {Fragment, setState, useContext, useEffect, useState} from 'react'
 import {Link, Redirect} from 'react-router-dom'
 import Firebase from '../utils/firebase'
 import {AuthContext} from '../utils/AuthContext'
-import '../css/addBird.css'
+import '../css/userProfil.css'
 
 export default function Profil() {
 
@@ -33,13 +33,13 @@ export default function Profil() {
     }
 
     return (
-        <div className="addBird">
+        <div className="userProfil">
 
             <div className="backHome-wrap">
                 <Link to={'/home'} className="back-to-home">Revenir a l'accueil</Link>
             </div>
-            <div className="addBird-top">
-                <h1 className="addBird-title">
+            <div className="userProfil-top">
+                <h1 className="userProfil-title">
                     Mon profil
                 </h1>
             </div>
@@ -47,14 +47,14 @@ export default function Profil() {
                 <ul>
                     {
                         informations.map(info => 
-                                <Fragment>
-                                    <li>
-                                        {info.name} {info.firstname}
-                                    </li>
-                                    <li>
-                                        {info.email}
-                                    </li>
-                                </Fragment>
+                                <dl>
+                                    <dt>Prénom</dt>
+                                    <dd>{info.firstname}</dd>
+                                    <dt>Nom</dt>
+                                    <dd>{info.name}</dd>
+                                    <dt>Email</dt>
+                                    <dd>{info.email}</dd>
+                                </dl>
                             )
                     }
                 </ul>

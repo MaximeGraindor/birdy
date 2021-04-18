@@ -46,20 +46,6 @@
     cursor: pointer;
 }
 
-.user-content{
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.user-update h2{
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-.user-update form {
-    text-align: center;
-}
 
 label{
     margin-right: 10px;
@@ -69,13 +55,7 @@ input{
     padding: 0.5rem 0.6rem;
 }
 
-.userUpdate-name{
-    margin-bottom: 0.8rem;
-}
 
-.userUpdate-submit{
-    margin-top: 1rem;
-}
 
 .addBird-error{
     margin-top: 0.3rem;
@@ -95,6 +75,11 @@ input{
     display: flex;
     flex-direction: row !important;
     gap: rem;
+}
+
+.addbird-takeover-wrap{
+    display: flex;
+    gap: 2rem;
 }
 
 .addBird-takeover .addbird-takeover-wrap div{

@@ -1,6 +1,7 @@
 import React, {useEffect, useState, Fragment} from 'react'
 import {useParams} from 'react-router-dom'
 import Firebase from '../utils/firebase'
+import '../css/userProfil.css'
 
 export default function UserProfile() {
 
@@ -12,7 +13,6 @@ export default function UserProfile() {
         db.collection('users').where("name", "==", user).get()
             .then(querySnapshot => {
                 const data = querySnapshot.docs.map(doc => doc.data())
-                console.log(data);
                 setUserProfil(data);
         })
     }, [])
